@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 1363520471202497451}
   - component: {fileID: 7739954331186467778}
   m_Layer: 0
-  m_Name: XR Origin (VR) 1
+  m_Name: XR Origin (VR)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
