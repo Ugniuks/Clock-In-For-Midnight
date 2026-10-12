@@ -148,15 +148,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbba1aa69f293c04caaddb2b05490204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Customer
-  wayPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  finalPoint: {fileID: 0}
   minStops: 1
-  maxStops: 10
+  maxStops: 4
