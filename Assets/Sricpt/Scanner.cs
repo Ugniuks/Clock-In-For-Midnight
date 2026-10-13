@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -9,6 +10,10 @@ public class Scanner : MonoBehaviour
     [SerializeField] private GameObject beam;
     [SerializeField] private Transform scanOrigin;
     [SerializeField] private float scanRange = 1.5f;
+    [SerializeField] private AudioClip scanSound;
+    [SerializeField, Range(0f, 1f)] private float volume = 1f;
+
+
 
     private void Awake()
     {
@@ -38,6 +43,7 @@ public class Scanner : MonoBehaviour
             }
 
             item.MarkScanned();
+            AudioSource.PlayClipAtPoint(scanSound, transform.position, volume);
             Debug.Log($"Scanned {item.itemName} ({item.price})");
         }
     }

@@ -117,10 +117,16 @@ public class Customer : MonoBehaviour
 
     IEnumerator CheckoutRoutine()
     {
+        // nothing to buy: skip the line and leave
+        if (basket.Count == 0)
+        {
+            yield return LeaveRoutine();
+            yield break;
+        }
+
         Counter counter = finalPoint.GetComponent<Counter>();
         counter.Join(this);
 
-        // walk to my place in line, moving up when the line moves
         int lastSpot = -1;
         while (true)
         {
@@ -139,12 +145,17 @@ public class Customer : MonoBehaviour
 
         yield return counter.Serve(basket);
         basket.Clear();
-        counter.Leave(this);          // the next customer moves up now
-        index = route.Count;
+        counter.Leave(this);
 
-        // walk back to the spawn point and disappear
+        yield return LeaveRoutine();
+    }
+
+    IEnumerator LeaveRoutine()
+    {
+        index = route.Count;                  // route is finished, Update() skips it
+
         agent.SetDestination(spawnPosition);
-        yield return null;
+        yield return null;                    // give the path a frame to calculate
         while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
             yield return null;
 
