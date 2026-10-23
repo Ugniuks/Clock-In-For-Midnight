@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Teleport
   - Anchor
+  - WayPoint
+  - FinalPoint
+  - Button
   layers:
   - Default
   - TransparentFX
