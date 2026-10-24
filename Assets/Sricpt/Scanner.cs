@@ -31,7 +31,8 @@ public class Scanner : MonoBehaviour
     {
         beam.SetActive(true);
 
-        if (Physics.Raycast(scanOrigin.position, scanOrigin.forward, out RaycastHit hit, scanRange))
+        if (Physics.Raycast(scanOrigin.position, scanOrigin.forward, out RaycastHit hit,
+                            scanRange, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             PurchableItem item = hit.collider.GetComponentInParent<PurchableItem>();
             if (item == null) return;

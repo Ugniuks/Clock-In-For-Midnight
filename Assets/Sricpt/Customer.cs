@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
@@ -23,6 +24,40 @@ public class Customer : MonoBehaviour
     public List<GameObject> basket = new List<GameObject>();
     bool busy;
 
+    [Header("Hotdog")]
+    public float hotdogChance = 1f;   // 100% of customers want a hotdog
+    bool wantsHotdog;
+
+    [Header("Dialogue")]
+    [SerializeField] private TMP_Text bubble;
+    [SerializeField] private AudioSource voice;
+    [SerializeField] private AudioClip speakSound;
+
+    void Say(string line)
+    {
+        Debug.Log($"Say -> bubble: {bubble}, voice: {voice}, clip: {speakSound}");
+        if (bubble == null) return;
+
+        bubble.text = line;
+        bubble.gameObject.SetActive(true);
+
+        if (voice != null && speakSound != null)
+        {
+            voice.pitch = Random.Range(0.9f, 1.2f);   // so every customer sounds a bit different
+            voice.PlayOneShot(speakSound);
+        }
+    }
+    void HideBubble()
+    {
+        if (bubble != null) bubble.gameObject.SetActive(false);
+    }
+
+    IEnumerator HideBubbleAfter(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        HideBubble();
+    }
+
     public void SetPool(IObjectPool<Customer> pool)
     {
         Customerpool = pool;
@@ -38,6 +73,7 @@ public class Customer : MonoBehaviour
         index = 0;
         basket.Clear();
         busy = false;
+        HideBubble();
 
         // Only look the points up once, not on every reuse from the pool
         if (allPoints == null)
@@ -50,6 +86,7 @@ public class Customer : MonoBehaviour
             finalPoint = GameObject.FindGameObjectWithTag("FinalPoint").transform;
         }
 
+        wantsHotdog = Random.value < hotdogChance;
         BuildRoute();
         MoveToNext();
     }
@@ -118,7 +155,7 @@ public class Customer : MonoBehaviour
     IEnumerator CheckoutRoutine()
     {
         // nothing to buy: skip the line and leave
-        if (basket.Count == 0)
+        if (!wantsHotdog && basket.Count == 0)
         {
             yield return LeaveRoutine();
             yield break;
@@ -143,11 +180,21 @@ public class Customer : MonoBehaviour
             yield return null;
         }
 
-        yield return counter.Serve(basket);
+        string line = wantsHotdog
+        ? (basket.Count > 0 ? "These, and one hotdog, please!" : "One hotdog, please!")
+        : "Hello!";
+        Say(line);
+
+        yield return counter.Serve(basket, wantsHotdog);
         basket.Clear();
         counter.Leave(this);
 
+        Say("Thank you!");
+        StartCoroutine(HideBubbleAfter(2f));
+
         yield return LeaveRoutine();
+
+        
     }
 
     IEnumerator LeaveRoutine()
