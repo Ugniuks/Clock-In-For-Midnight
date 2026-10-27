@@ -5,9 +5,9 @@ using TMPro;
 
 public class Counter : MonoBehaviour
 {
-    [SerializeField] private Transform[] itemSpots;  // empty objects on the counter surface
+    [SerializeField] private Transform[] itemSpots;  
     public int money;
-    [SerializeField] private Transform[] queueSpots;  // [0] = in front of the register, then further back
+    [SerializeField] private Transform[] queueSpots;  
     private List<Customer> line = new List<Customer>();
 
     public void Join(Customer c) => line.Add(c);
@@ -48,14 +48,13 @@ public class Counter : MonoBehaviour
             spawned.Add(obj.GetComponent<PurchableItem>());
         }
 
-        HotDog dog = null;          // set once the hotdog button has registered it
+        HotDog dog = null;         
         hotdogPressed = false;
         payPressed = false;
         int lastKey = -1;
 
         while (true)
         {
-            // hotdog: registered by the hotdog button, unregistered if it leaves the zone
             if (wantsHotdog)
             {
                 if (hotdogPressed && hotdogZone.HasHotDog) dog = hotdogZone.CurrentHotDog;
@@ -67,15 +66,13 @@ public class Counter : MonoBehaviour
             bool ready = allScanned && (!wantsHotdog || dog != null);
 
             if (payPressed && ready) break;
-            payPressed = false;     // a press at the wrong moment is ignored
+            payPressed = false;    
 
-            // running total: scanned items + registered hotdog
             int sum = 0;
             foreach (PurchableItem s in spawned)
                 if (s.scanned) sum += s.price;
             if (dog != null) sum += dog.price;
 
-            // only rewrite the display when something changed
             int key = sum * 8 + (allScanned ? 4 : 0) + (dog != null ? 2 : 0) + (hotdogZone.HasHotDog ? 1 : 0);
             if (key != lastKey)
             {
@@ -120,17 +117,5 @@ public class Counter : MonoBehaviour
 
         position = Mathf.Clamp(position, 0, queueSpots.Length - 1);
         return queueSpots[position].position;
-    }
-    
-
-    private void UpdateRunningTotal(List<PurchableItem> items)
-    {
-        int sum = 0;
-        foreach (PurchableItem s in items)
-            if (s.scanned) sum += s.price;
-
-        if (sum == lastShown) return;       // only rewrite the text when it changes
-        lastShown = sum;
-        ShowText($"Total: {sum}");
     }
 }

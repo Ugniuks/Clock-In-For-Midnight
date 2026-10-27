@@ -12,7 +12,6 @@ public class FaceCamera : MonoBehaviour
             cam = Camera.main.transform;
         }
 
-        // TextMeshPro reads correctly when its forward points away from the viewer
         transform.rotation = Quaternion.LookRotation(transform.position - cam.position);
     }
 }

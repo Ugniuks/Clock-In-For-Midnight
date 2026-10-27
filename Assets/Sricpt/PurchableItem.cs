@@ -10,7 +10,5 @@ public class PurchableItem : MonoBehaviour
     public void MarkScanned()
     {
         scanned = true;
-        // optional: change colour, play a beep, etc.
     }
-
 }

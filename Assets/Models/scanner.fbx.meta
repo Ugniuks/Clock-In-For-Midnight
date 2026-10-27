@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8cf6c47d63c833e43adce3ec46e54cbe
+guid: f901f3b03cbed3341ae195ee6fe1f0cb
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: HotDogMeat
-    second: {fileID: 2100000, guid: 1e84a54d24111e44b93c0136bf0b8836, type: 2}
+      name: Black
+    second: {fileID: 2100000, guid: f3523ed2abe779d4487842c769c79d21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Scan
+    second: {fileID: 2100000, guid: af0e9b2694ceffb409d1871fbe6594d8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -44,8 +49,8 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    preBakeConvexCollisionMesh: 0
-    preBakeTriangleCollisionMesh: 0
+    preBakeConvexCollisionMesh: 1
+    preBakeTriangleCollisionMesh: 1
     importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1

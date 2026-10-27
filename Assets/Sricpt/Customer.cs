@@ -8,7 +8,7 @@ using UnityEngine.Pool;
 public class Customer : MonoBehaviour
 {
     [Header("Route")]
-    public int minStops = 1; // Minimum number of stops before reaching the final point
+    public int minStops = 1; 
     public int maxStops = 10;
     Vector3 spawnPosition;
 
@@ -25,7 +25,7 @@ public class Customer : MonoBehaviour
     bool busy;
 
     [Header("Hotdog")]
-    public float hotdogChance = 1f;   // 100% of customers want a hotdog
+    public float hotdogChance = 1f;   
     bool wantsHotdog;
 
     [Header("Dialogue")]
@@ -43,7 +43,7 @@ public class Customer : MonoBehaviour
 
         if (voice != null && speakSound != null)
         {
-            voice.pitch = Random.Range(0.9f, 1.2f);   // so every customer sounds a bit different
+            voice.pitch = Random.Range(0.9f, 1.2f);   
             voice.PlayOneShot(speakSound);
         }
     }
@@ -68,14 +68,13 @@ public class Customer : MonoBehaviour
     public void OnSpawn()
     {
         agent = GetComponent<NavMeshAgent>();
-        spawnPosition = transform.position;   // new
+        spawnPosition = transform.position;   
         route.Clear();
         index = 0;
         basket.Clear();
         busy = false;
         HideBubble();
 
-        // Only look the points up once, not on every reuse from the pool
         if (allPoints == null)
         {
             var found = GameObject.FindGameObjectsWithTag("WayPoint");
@@ -101,9 +100,9 @@ public class Customer : MonoBehaviour
         {
             int pick = Random.Range(0, pool.Count);
             route.Add(pool[pick]);
-            pool.RemoveAt(pick);        // no repeats
+            pool.RemoveAt(pick);       
         }
-        route.Add(finalPoint);          // always last
+        route.Add(finalPoint);          
     }
     void MoveToNext()
     {
@@ -112,7 +111,6 @@ public class Customer : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     void Update()
     {
         if (busy || index >= route.Count || agent.pathPending) return;
@@ -144,7 +142,7 @@ public class Customer : MonoBehaviour
 
         if (route[index] == finalPoint)
         {
-            yield return CheckoutRoutine();   // go join the line instead of walking to the register
+            yield return CheckoutRoutine();   
             yield break;
         }
 
@@ -154,7 +152,6 @@ public class Customer : MonoBehaviour
 
     IEnumerator CheckoutRoutine()
     {
-        // nothing to buy: skip the line and leave
         if (!wantsHotdog && basket.Count == 0)
         {
             yield return LeaveRoutine();
@@ -180,10 +177,12 @@ public class Customer : MonoBehaviour
             yield return null;
         }
 
-        string line = wantsHotdog
-        ? (basket.Count > 0 ? "These, and one hotdog, please!" : "One hotdog, please!")
-        : "Hello!";
-        Say(line);
+        if (!wantsHotdog)
+            Say("Hello!");
+        else if (basket.Count > 0)
+            Say("These, and one hotdog, please!");
+        else
+            Say("One hotdog, please!");
 
         yield return counter.Serve(basket, wantsHotdog);
         basket.Clear();
@@ -199,10 +198,10 @@ public class Customer : MonoBehaviour
 
     IEnumerator LeaveRoutine()
     {
-        index = route.Count;                  // route is finished, Update() skips it
+        index = route.Count;                  
 
         agent.SetDestination(spawnPosition);
-        yield return null;                    // give the path a frame to calculate
+        yield return null;                    
         while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
             yield return null;
 

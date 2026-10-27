@@ -31,10 +31,7 @@ public class Spawner : MonoBehaviour
         return customer;
     }
 
-    private void OnGet(Customer c) => c.gameObject.SetActive(true);
-    private void OnRelease(Customer c) => c.gameObject.SetActive(false);
-
-
+    
     // Update is called once per frame
     private void Update()
     {
@@ -51,7 +48,7 @@ public class Spawner : MonoBehaviour
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         customer.GetComponent<NavMeshAgent>().Warp(sp.position);
 
-        customer.OnSpawn(); // builds a fresh random route (see below)
+        customer.OnSpawn(); 
     }
 
     private void ScheduleNextSpawn()

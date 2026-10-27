@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d8eb1106455cf6a42b0e1b92316caec4
+guid: c8229287898cbdc4d858252c02019626
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bun
-    second: {fileID: 2100000, guid: 0eb50f67b0be5594bb16476c0e3c15f3, type: 2}
+      name: Black
+    second: {fileID: 2100000, guid: 4b43eb0dbbdedb74ca4dd94f944e303d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: HotDogMeat
-    second: {fileID: 2100000, guid: c5f6125bdd9932d42a2a6daa18349aab, type: 2}
+      name: Ketchup
+    second: {fileID: 2100000, guid: c5f4a1536445b314490521c44d8c6a90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: b72aa015e55f77f438bfdeac39cb7459, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

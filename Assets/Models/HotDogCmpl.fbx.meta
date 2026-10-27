@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 0d8285f1886f2a841852680c63a783bc
+guid: b0c44cf6ad6eb9b459e50886a15c6df2
 ModelImporter:
   serializedVersion: 24600
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: HotDogMeat
-    second: {fileID: 2100000, guid: 9a8a79daf5e760c46b1707a8bf598964, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
