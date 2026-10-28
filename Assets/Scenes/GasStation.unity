@@ -2906,6 +2906,25 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 83dfa4fe2c6862f409daa9c2209d59e5, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1 &1083451717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2213752525072713546, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
+  m_PrefabInstance: {fileID: 818539807697531420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1083451722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083451717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f225a41616fb1842927548e56bfe971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  scanSound: {fileID: 8300000, guid: 019203a9b525a7d4380ca3a7aef251ff, type: 3}
+  volume: 1
 --- !u!1 &1108302135
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,6 +6150,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1390954645871739915, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1881414990608483747, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
       propertyPath: m_Name
       value: scanner
@@ -6162,6 +6185,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1520916580460740245, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1810144099}
+    - targetCorrespondingSourceObject: {fileID: 2213752525072713546, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1083451722}
   m_SourcePrefab: {fileID: 100100000, guid: d01d6bcd0fe26b24aacda0eb100ebc2a, type: 3}
 --- !u!1001 &8373019897675022372
 PrefabInstance:
