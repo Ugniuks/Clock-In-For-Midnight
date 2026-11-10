@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Pool;
+
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private Customer customerPrefab;
+    [SerializeField] private CustomerAppearanceFactory appearanceFactory;
     [SerializeField] private float minSpawnTime = 5f;
     [SerializeField] private float maxSpawnTime = 20f;
 
@@ -14,9 +16,12 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        // Initialize the object pool for the enemy
-        customerPool = new ObjectPool<Customer>(CreateCustomer);
+        customerPool = new ObjectPool<Customer>(
+            CreateCustomer,
+            actionOnGet: null,
+            actionOnRelease: null);
     }
+
     private void Start()
     {
         ScheduleNextSpawn();
@@ -41,6 +46,7 @@ public class Spawner : MonoBehaviour
             ScheduleNextSpawn();
         }
     }
+
     private void SpawnCustomer()
     {
         Customer customer = customerPool.Get();
@@ -48,7 +54,14 @@ public class Spawner : MonoBehaviour
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         customer.GetComponent<NavMeshAgent>().Warp(sp.position);
 
-        customer.OnSpawn(); 
+        // Re-roll the look every time, since pooled customers get reused
+        if (appearanceFactory != null &&
+            customer.TryGetComponent(out CustomerAppearance look))
+        {
+            look.Apply(appearanceFactory.Generate(), appearanceFactory);
+        }
+
+        customer.OnSpawn();
     }
 
     private void ScheduleNextSpawn()
@@ -56,4 +69,3 @@ public class Spawner : MonoBehaviour
         nextSpawnTime = Time.time + Random.Range(minSpawnTime, maxSpawnTime);
     }
 }
-
