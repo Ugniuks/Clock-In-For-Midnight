@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
       propertyPath: m_Name
-      value: npc_hats2
+      value: npc_hats
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -650,7 +650,7 @@ MonoBehaviour:
   pickChance: 0.6
   browseTime: 1.5
   basket: []
-  hotdogChance: 0.3
+  hotdogChance: 0.4
   bubble: {fileID: 1481222631252071900}
   voice: {fileID: 4471872841674834758}
   speakSound: {fileID: 8300000, guid: 857643a78c0aa41498ef68f331dd4e69, type: 3}
