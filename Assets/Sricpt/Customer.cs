@@ -77,7 +77,7 @@ public class Customer : MonoBehaviour
 
         if (allPoints == null)
         {
-            var found = GameObject.FindGameObjectsWithTag("WayPoint");
+            var found = GameObject.FindGameObjectsWithTag("Shelf");
             allPoints = new Transform[found.Length];
             for (int i = 0; i < found.Length; i++)
                 allPoints[i] = found[i].transform;

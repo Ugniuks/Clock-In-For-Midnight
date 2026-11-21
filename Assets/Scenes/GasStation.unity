@@ -2965,7 +2965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
   m_SerializedVersion: 0
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -2980,7 +2980,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.05333333
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 52638959b2076df4e9253f77682d18f3, type: 2}
   m_BuildHeightMesh: 0
@@ -3178,73 +3178,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.059484683
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.041893005
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5757956
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.8175937
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 109.688995
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905299084733331524, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7216627451358290333, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
       propertyPath: m_Name
       value: XR Origin (VR)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448179119864260309, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_CameraYOffset
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8448179119864260309, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
-      propertyPath: m_RequestedTrackingOriginMode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

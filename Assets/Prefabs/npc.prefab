@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: npc
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
+      propertyPath: m_TagString
+      value: Npc
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
