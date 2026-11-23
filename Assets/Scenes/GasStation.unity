@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 6612494708399311369, guid: 77ee0930df8729a418c677d927e573b5, type: 3}
+  itemSpots: []
 --- !u!1 &130041570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,6 +1699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 5308712923579797869, guid: 71176d457b3ca5948b0bb5d481114981, type: 3}
+  itemSpots: []
 --- !u!1001 &405661810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3130,6 +3132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 5308712923579797869, guid: 71176d457b3ca5948b0bb5d481114981, type: 3}
+  itemSpots: []
 --- !u!1001 &1168263324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3181,6 +3184,10 @@ PrefabInstance:
     - target: {fileID: 7216627451358290333, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
       propertyPath: m_Name
       value: XR Origin (VR)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951252744584926782, guid: b8942ae341a3c144ea6f9ebf2746bd15, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3282,7 +3289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135023674665499069, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8518324294302271954, guid: 58d0a4ac86f2348deb02f3880c71378e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3492,6 +3499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 5308712923579797869, guid: 71176d457b3ca5948b0bb5d481114981, type: 3}
+  itemSpots: []
 --- !u!1 &1246529031
 GameObject:
   m_ObjectHideFlags: 0
@@ -4368,6 +4376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 6612494708399311369, guid: 77ee0930df8729a418c677d927e573b5, type: 3}
+  itemSpots: []
 --- !u!1 &1463052724
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,6 +5210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 5308712923579797869, guid: 71176d457b3ca5948b0bb5d481114981, type: 3}
+  itemSpots: []
 --- !u!4 &1687969022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7574414265771899565, guid: 0be14de025308554d803a387da4346b6, type: 3}
@@ -5483,6 +5493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 6612494708399311369, guid: 77ee0930df8729a418c677d927e573b5, type: 3}
+  itemSpots: []
 --- !u!1 &1836884950
 GameObject:
   m_ObjectHideFlags: 0
@@ -6076,6 +6087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shelf
   itemPrefab: {fileID: 4802599728883814485, guid: a837187289e5a9f45ba848369f0aaa93, type: 3}
+  itemSpots: []
 --- !u!1001 &1947441325
 PrefabInstance:
   m_ObjectHideFlags: 0

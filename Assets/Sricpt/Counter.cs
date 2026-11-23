@@ -17,7 +17,6 @@ public class Counter : MonoBehaviour
     private bool payPressed;
 
     [SerializeField] private TMP_Text display;
-    private int lastShown = -1;
 
     [SerializeField] private HotDogZone hotdogZone;
     private bool hotdogPressed;

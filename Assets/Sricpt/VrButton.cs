@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class VrButton : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class VrButton : MonoBehaviour
             onReleased?.Invoke();
             Debug.Log("Button Released");
             StartCoroutine(DeadTimeCoroutine());
+
         }
     }
 

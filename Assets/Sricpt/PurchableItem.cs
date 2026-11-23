@@ -6,7 +6,6 @@ public class PurchableItem : MonoBehaviour
     public int price = 2;
     public bool scanned;
 
-
     public void MarkScanned()
     {
         scanned = true;

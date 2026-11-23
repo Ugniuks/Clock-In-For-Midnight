@@ -192,8 +192,6 @@ public class Customer : MonoBehaviour
         StartCoroutine(HideBubbleAfter(2f));
 
         yield return LeaveRoutine();
-
-        
     }
 
     IEnumerator LeaveRoutine()

@@ -516,15 +516,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cc4972f636dfb744cb490156e8185d1c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -657,10 +657,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   minStops: 1
   maxStops: 10
-  pickChance: 1
+  pickChance: 0.7
   browseTime: 1.5
   basket: []
-  hotdogChance: 0
+  hotdogChance: 0.5
   bubble: {fileID: 1481222631252071900}
   voice: {fileID: 4471872841674834758}
   speakSound: {fileID: 8300000, guid: 857643a78c0aa41498ef68f331dd4e69, type: 3}

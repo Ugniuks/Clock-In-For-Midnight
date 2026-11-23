@@ -30,14 +30,12 @@ public class Spawner : MonoBehaviour
 
     private Customer CreateCustomer()
     {
-        // Instantiate a new enemy from the prefab
         Customer customer = Instantiate(customerPrefab);
         customer.SetPool(customerPool);
         return customer;
     }
 
     
-    // Update is called once per frame
     private void Update()
     {
         if (Time.time >= nextSpawnTime)

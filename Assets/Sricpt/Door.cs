@@ -29,8 +29,8 @@ public class Door : MonoBehaviour
 
     void Close()
     {
-       // door.transform.localEulerAngles -= openRot;
-        door.transform.localEulerAngles = new Vector3(90, 180, 0);
+       door.transform.localEulerAngles -= openRot;
+        //door.transform.localEulerAngles = new Vector3(90, 180, 0);
         //door.transform.localEulerAngles = Vector3.zero;
     }
 }

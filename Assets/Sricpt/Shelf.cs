@@ -34,22 +34,22 @@ public class Shelf : MonoBehaviour
         for (int i = 0; i < itemSpots.Length; i++)
         {
             GameObject item = Instantiate(itemPrefab, itemSpots[i].position, itemSpots[i].rotation, itemSpots[i]);
-            MakeDecorative(item);
+           //MakeDecorative(item);
             spawnedItems[i] = item;
         }
     }
 
-    private void MakeDecorative(GameObject item)
-    {
-        // No collisions, so NPCs and the player can't bump or block on them
-        foreach (Collider c in item.GetComponentsInChildren<Collider>())
-            c.enabled = false;
+    //private void MakeDecorative(GameObject item)
+    //{
+    //    // No collisions, so NPCs and the player can't bump or block on them
+    //    foreach (Collider c in item.GetComponentsInChildren<Collider>())
+    //        c.enabled = false;
 
-        // Stop physics from moving the item
-        foreach (Rigidbody rb in item.GetComponentsInChildren<Rigidbody>())
-        {
-            rb.isKinematic = true;
-            rb.detectCollisions = false;
-        }
-    }
+    //    // Stop physics from moving the item
+    //    foreach (Rigidbody rb in item.GetComponentsInChildren<Rigidbody>())
+    //    {
+    //        rb.isKinematic = true;
+    //        rb.detectCollisions = false;
+    //    }
+    //}
 }

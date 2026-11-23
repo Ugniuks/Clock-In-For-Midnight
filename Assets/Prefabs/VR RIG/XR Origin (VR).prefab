@@ -1062,7 +1062,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.092751965
-  m_Center: {x: 0, y: 0, z: 0.0853657}
+  m_Center: {x: 0.18, y: 0, z: 0.0853657}
 --- !u!1 &4258119876989210469
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1278,6 @@ GameObject:
   - component: {fileID: 8448179119864260309}
   - component: {fileID: 1363520471202497451}
   - component: {fileID: 7739954331186467778}
-  - component: {fileID: 8951252744584926782}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -1359,29 +1358,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!136 &8951252744584926782
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7216627451358290333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.19873184
-  m_Height: 1.6979084
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8471141, z: -0.0023721457}
 --- !u!1 &8974492309866203043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,6 +1729,18 @@ PrefabInstance:
     - target: {fileID: 2163910320638523180, guid: 769a5c1f89a3fd74bbe7154c719308c1, type: 3}
       propertyPath: m_Name
       value: R_Hand_Rigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016111513084796566, guid: 769a5c1f89a3fd74bbe7154c719308c1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.07996733
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016111513084796566, guid: 769a5c1f89a3fd74bbe7154c719308c1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.15758632
+      objectReference: {fileID: 0}
+    - target: {fileID: 3016111513084796566, guid: 769a5c1f89a3fd74bbe7154c719308c1, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0000000873972
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
