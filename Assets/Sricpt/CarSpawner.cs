@@ -64,7 +64,7 @@ public class CarSpawner : MonoBehaviour
         finishing = true;
 
         var front = line[0];
-        front.HideBubble();                                   
+       // front.HideBubble();                                   
         yield return new WaitForSeconds(waitBeforeReaction);  
 
         if (front != null) front.React(angry);                

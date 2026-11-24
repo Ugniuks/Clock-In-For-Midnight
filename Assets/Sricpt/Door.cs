@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     public GameObject door;
     public Vector3 openRot = new Vector3(0, 0, 0);
+    public bool hasBell = false;
     [SerializeField] private AudioClip bellSound;
     [SerializeField, Range(0f, 1f)] private float volume = 1f;
     private void OnTriggerEnter(Collider collider)
@@ -17,7 +18,8 @@ public class Door : MonoBehaviour
     void Open()
     {
         door.transform.localEulerAngles = openRot;
-        AudioSource.PlayClipAtPoint(bellSound, transform.position, volume);
+        if(hasBell)
+            AudioSource.PlayClipAtPoint(bellSound, transform.position, volume);
 
     }
 

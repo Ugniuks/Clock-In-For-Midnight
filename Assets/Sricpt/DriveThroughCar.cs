@@ -39,11 +39,6 @@ public class DriveThroughCar : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
-    public void HideBubble()
-    {
-        if (customer != null) customer.HideBubble();
-    }
-
     public void React(bool angry)
     {
         if (customer == null) return;
